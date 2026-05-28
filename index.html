@@ -16,12 +16,12 @@
       let button = document.getElementById('button');
       let audio = document.getElementById('audio');
       button.addEventListener('click', () => {
-        let hours = document.getElementById('hours').value;
-        let minutes = document.getElementById('minutes').value;
-        let seconds = document.getElementById('seconds').value;
-        window.setTimeout(((((hours*60)+minutes)*60)+seconds)*1000, () => {
+        let hours = parseInt(document.getElementById('hours').value||0);
+        let minutes = parseInt(document.getElementById('minutes').value||0);
+        let seconds = parseInt(document.getElementById('seconds').value||0);
+        window.setTimeout(() => {
           audio.play();
-        });
+        }, ((((hours*60)+minutes)*60)+seconds)*1000);
       });
     </script>
   </body>
