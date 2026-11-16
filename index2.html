@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<style>
+			body {
+				margin: 0;
+				padding:0;
+			}
+			input {
+				position: fixed;
+				top:0;
+				left:0;
+				height:1em;
+				width: 100vw;
+				border: none;
+				outline: none;
+			}
+			iframe {
+				position:fixed;
+				top:1em;
+				left:0;
+				width: 100vw;
+				height:calc(100vh-1em);
+				border: none;
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="input"/>
+		<iframe src="https://google.com" id="iframe"></iframe>
+		<script>
+			document.getElementById('input').addEventListener('change', () => {
+				let url = encodeURI(document.getElementById('input').value);
+				document.getElementById('iframe').setAttribute('src', url);
+			});
+		</script>
+	</body>
+</html>
